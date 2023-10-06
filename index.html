@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <link rel="icon" type="image/svg+xml" href="/public/images/pwa/icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#5a0fc8" />
+    <meta name="description" content="test pwa">
+     <link rel="icon" href="/images/pwa/icon-72x72.png">
+     <link rel="icon" href="/images/pwa/icon-96x96.png">
+     <link rel="icon" href="/images/pwa/icon-128x128.png">
+     <link rel="icon" href="/images/pwa/icon-144x144.png">
+     <link rel="icon" href="/images/pwa/icon-152x152.png">
+     <link rel="icon" href="/images/pwa/icon-192x192.png">
+     <link rel="icon" href="/images/pwa/icon-384x384.png">
+    <link rel="icon" href="/images/pwa/icon-512x512.png">
+    <link rel="apple-touch-icon" href="/images/pwa/icon-192x192.png">
+    <title>Vite App</title>
+    <link rel="manifest" href="locmanifest.json" />
+    
+    <script type="module">
+      import { registerSW } from 'virtual:pwa-register';
+      registerSW({ immediate: true });
+      
+      if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js', { scope: 'https://login-veb-github-io.vercel.app/' })
+  })
+}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+
+<!-- 
+
+npm run x
+git add ./
+git commit -am '
+ git push
+git log
+git stash
+git push -f origin HEAD^:main 
+npm run build
+Удолить локально коммит 
+git reset HEAD~ 
+
+-->
