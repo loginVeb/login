@@ -42,7 +42,7 @@ conn.query('SELECT * FROM user',(err,result,field)=>{
 
 
 
-app.get('/', (req , res) => {
+app.get('/api/', (req , res) => {
     //console.log(dbdata);
     res.send(dbdata);
     res.end();

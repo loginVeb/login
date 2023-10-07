@@ -75,7 +75,7 @@ const BlockLogin= () => {
   let [statePass, setStatePass] = React.useState([]);
 
 React.useEffect(()=>{
-  const port = process.env.PORT 
+  const port = 'https://login-plum-eta.vercel.app/api/'
   let data =  axios.get(port, {withcredentials:true });
   data.then((res) => {
     //console.log(res);
