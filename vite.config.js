@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import { VitePWA as pwa } from "vite-plugin-pwa";
 
 
-import manifest from "./locmanifest.json" assert { type: "json" };
+import manifest from "./manifest.json" assert { type: "json" };
 //import manifest from "./locmanifest.json";
 import react from "@vitejs/plugin-react";
 
