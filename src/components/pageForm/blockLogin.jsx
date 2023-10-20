@@ -71,22 +71,23 @@ text-wrap:balance;
 `
 
 const BlockLogin= () => {
-  let [stateName , setStateName] = React.useState([]);
-  let [statePass, setStatePass] = React.useState([]);
+  let [state , setState] = React.useState([]);
+  
+  let [textName, setTextName] = React.useState('');
+let [textPass, setTextPass] = React.useState('');
+
+  
 
 React.useEffect(()=>{
  const port =  'http://localhost:3306' ;
   let data =  axios.get(port, {withcredentials:true });
   data.then((res) => {
     //console.log(res);
-    setStateName(res.data );
-    setStatePass(res.data);
+    setState(res.data );
   });
   //console.log(stateTudo[0].name);
 }, []);
 
-let [textName, setTextName] = React.useState('');
-let [textPass, setTextPass] = React.useState('');
 
 //let indexName;
 
@@ -100,11 +101,10 @@ let CurrentTextPass = (e)=>{
 
 
 const isDan = ()=>{
-  let index = stateName.findIndex(x => x.name === textName );
-//let index2 = statePass.findIndex(x => x.password === textPass );
+  let index = state.findIndex(x => x.name === textName );
   
-  let auth = statePass[index].password == textPass; 
- // let indexPass = statePass.findIndex(x => x.password == textPass); 
+  let auth = state[index].password == textPass; 
+ 
   
 if (auth) {
   console.log(`с возращением ${index} `);
@@ -132,7 +132,7 @@ if (auth) {
    name='password' 
    value={textPass} />
    
-   <SLink to={'server'}>
+   <SLink>
     <SButton type='submit' onClick={
       isDan
     } >

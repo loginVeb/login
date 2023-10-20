@@ -40,6 +40,7 @@ let dbdata;
 app.get('/', (req , res) => {
    // console.log(dbdata);
     res.send(dbdata);
+    res.end();
 })
 
 
