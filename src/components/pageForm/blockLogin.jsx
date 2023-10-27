@@ -79,13 +79,13 @@ let [textPass, setTextPass] = React.useState('');
   
 
 React.useEffect(()=>{
- const port =  'http://localhost:3306' ;
+ const port =  'https://server-delta-beige.vercel.app/' ;
   let data =  axios.get(port, {withcredentials:true });
   data.then((res) => {
-    //console.log(res);
+    console.log(res);
     setState(res.data );
   });
-  //console.log(stateTudo[0].name);
+  console.log(stateTudo[0].name);
 }, []);
 
 
