@@ -82,8 +82,8 @@ React.useEffect(()=>{
  const port =  'https://server-delta-beige.vercel.app/' ;
   let data =  axios.get(port, {withcredentials:true });
   data.then((res) => {
-    console.log(res);
-    if(!res.data){
+    //console.log(res);
+    if( res.data === '' || res.data === null || res.data === undefined){
       setState([
         {name:'x',pass:1},
         {name:'xx',pass:2}
