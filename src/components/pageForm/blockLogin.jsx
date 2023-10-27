@@ -110,7 +110,7 @@ let CurrentTextPass = (e)=>{
 const isDan = ()=>{
   let index = state.findIndex(x => x.name === textName );
   
-  let auth = state[index].password == textPass; 
+  let auth = state[index].pass == textPass; 
  
   
 if (auth) {
