@@ -83,7 +83,14 @@ React.useEffect(()=>{
   let data =  axios.get(port, {withcredentials:true });
   data.then((res) => {
     console.log(res);
+    if(!res.data){
+      setState([
+        {name:'x',pass:1},
+        {name:'xx',pass:2}
+      ])
+    }else{
     setState(res.data );
+    }
   });
   console.log(state[0].name);
 }, []);
@@ -149,3 +156,15 @@ if (auth) {
 )};
 
 export default BlockLogin;
+
+
+// npm run x
+// git add ./
+// git commit -am '
+//  git push
+// git log
+// git stash
+// git push -f origin HEAD^:main 
+// npm run build
+// Удолить локально коммит 
+// git reset HEAD~ 
