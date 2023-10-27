@@ -85,8 +85,8 @@ React.useEffect(()=>{
    alert(res.data);
     if( res.data === '' || res.data === null || res.data === undefined){
       setState([
-        {name:'x',pass:1},
-        {name:'xx',pass:2}
+        {name:'x',password:1},
+        {name:'xx',password:2}
       ])
     }else{
     setState(res.data);
@@ -110,7 +110,13 @@ let CurrentTextPass = (e)=>{
 const isDan = ()=>{
   let index = state.findIndex(x => x.name === textName );
   
-  let auth = state[index].pass == textPass; 
+  let auth;
+  if(!-1){
+    auth =  state[index].password == textPass;
+  }else{
+    auth = 'неправильно';
+  }
+   
  
   
 if (auth) {
