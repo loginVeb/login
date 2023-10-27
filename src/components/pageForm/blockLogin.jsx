@@ -85,7 +85,7 @@ React.useEffect(()=>{
     console.log(res);
     setState(res.data );
   });
-  console.log(stateTudo[0].name);
+  console.log(state[0].name);
 }, []);
 
 
